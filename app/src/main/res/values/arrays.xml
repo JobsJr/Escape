@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="topics">
+        <item>Loaders</item>
+        <item>Handlers and Loopers</item>
+        <item>Custom Views</item>
+        <item>Unit testing</item>
+        <item>Messages(ITC)</item>
+        <item>Recycler View</item>
+        <item>Database &amp; Providers</item>
+        <item>Animation</item>
+        <item>Services</item>
+    </string-array>
+</resources>

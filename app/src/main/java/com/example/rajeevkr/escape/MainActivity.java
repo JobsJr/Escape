@@ -6,10 +6,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.rajeevkr.escape.adapters.TopicsAdapter;
+import com.example.rajeevkr.escape.asyntask.AsynctaskExampleActivity;
+
+public class MainActivity extends AppCompatActivity implements TopicsAdapter.OnTopicSelectedListener {
     private TopicsFragment mTopicsFragment;
     private SecondFragment mSecondFragment;
     private boolean isReplace = false;
+
+    private static final String TOPIC_ASYNCTASK = "Async Tasks";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,4 +96,14 @@ public class MainActivity extends AppCompatActivity {
         return methodName;
     }
 
+    @Override
+    public void onTopicSelected(String position) {
+        switch (position) {
+            case TOPIC_ASYNCTASK:
+                AsynctaskExampleActivity.start(this);
+                break;
+            default:
+                throw new IllegalArgumentException("Wrong index sent!!");
+        }
+    }
 }

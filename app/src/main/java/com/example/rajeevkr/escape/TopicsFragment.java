@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -15,7 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.rajeevkr.escape.adapters.TopicsAdapter;
-import com.example.rajeevkr.escape.ui.DividerItemDecoration;
 
 /**
  * Created by rajeevkr on 5/2/16.
@@ -59,7 +57,7 @@ public class TopicsFragment extends Fragment {
         mLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(mLayoutManager);
 
-        myAdapter = new TopicsAdapter();
+        myAdapter = new TopicsAdapter((MainActivity) getActivity());
         myAdapter.setData(getActivity().getResources().getStringArray(R.array.topics));
         recyclerView.setAdapter(myAdapter);
 

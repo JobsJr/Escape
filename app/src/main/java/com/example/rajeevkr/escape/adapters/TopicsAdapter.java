@@ -13,6 +13,11 @@ import com.example.rajeevkr.escape.R;
  */
 public class TopicsAdapter extends RecyclerView.Adapter<TopicsAdapter.MyViewHolder> {
     private String[] myData;
+    public OnTopicSelectedListener onTopicSelectedListener;
+
+    public TopicsAdapter(OnTopicSelectedListener listener) {
+        onTopicSelectedListener = listener;
+    }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -44,11 +49,18 @@ public class TopicsAdapter extends RecyclerView.Adapter<TopicsAdapter.MyViewHold
             super(itemView);
             topicTv = (TextView) itemView.findViewById(R.id.topic_tv);
             itemView.setOnClickListener(this);
+            itemView.findViewById(R.id.item_topics).setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
-
+            if (onTopicSelectedListener != null) {
+                onTopicSelectedListener.onTopicSelected(myData[getLayoutPosition()]);
+            }
         }
+    }
+
+    public interface OnTopicSelectedListener {
+        void onTopicSelected(String topic);
     }
 }

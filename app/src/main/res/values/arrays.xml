@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="topics">
+        <item>Async Tasks</item>
         <item>Loaders</item>
         <item>Handlers and Loopers</item>
         <item>Custom Views</item>
